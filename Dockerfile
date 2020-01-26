@@ -1,5 +1,7 @@
 FROM alpine:3.11.3
 
+SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
+
 RUN apk --no-cache add \
     # CircleCI required tools
     git openssh-client tar gzip ca-certificates \
