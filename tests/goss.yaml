@@ -1,0 +1,44 @@
+package:
+  bash:
+    installed: true
+    versions:
+    - 5.0.11-r1
+  curl:
+    installed: true
+    versions:
+    - 7.67.0-r0
+  docker:
+    installed: true
+    versions:
+    - 19.03.5-r0
+  git:
+    installed: true
+    versions:
+    - 2.24.1-r0
+  gzip:
+    installed: true
+    versions:
+    - 1.10-r0
+  jq:
+    installed: true
+    versions:
+    - 1.6-r0
+  openssh-client:
+    installed: true
+    versions:
+    - 8.1_p1-r0
+  tar:
+    installed: true
+    versions:
+    - 1.32-r1
+group:
+  docker:
+    exists: true
+    gid: 101
+command:
+  goss --version:
+    exit-status: 0
+    stdout:
+    - goss version v0.3.9
+    stderr: []
+    timeout: 10000
