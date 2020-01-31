@@ -1,0 +1,50 @@
+##
+# Circle CI 2.0 configuration
+#
+##
+version: 2.1
+orbs:
+  docker: circleci/docker@0.5.20
+jobs:
+  run-tests:
+    docker:
+      - image: particleflux/circleci-docker-dgoss:1.0.0
+    environment:
+      # fixes a permission issue on Circle 2.0
+      # see https://github.com/aelsabbahy/goss/issues/305#issuecomment-353122840
+      GOSS_FILES_STRATEGY: cp
+
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: Run image tests
+          command: |
+            mkdir build
+
+            echo "Building docker image..."
+            docker build -t "test-image" . | tee "build/docker-build.log"
+
+            cd tests
+            dgoss run -Pit test-image bash
+
+      - store_artifacts:
+          path: build
+
+workflows:
+  version: 2
+  commit:
+    jobs:
+      - run-tests
+      - docker/hadolint
+  nightly:
+    triggers:
+      - schedule:
+          cron: "0 0 * * *"
+          filters:
+            branches:
+              only:
+                - master
+    jobs:
+      - run-tests
+      - docker/hadolint
