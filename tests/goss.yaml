@@ -11,7 +11,7 @@ package:
     installed: true
   jq:
     installed: true
-  openssh-client:
+  openssh-client-default:
     installed: true
   tar:
     installed: true
