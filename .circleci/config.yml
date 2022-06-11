@@ -37,10 +37,9 @@ workflows:
     jobs:
       - run-tests
       - docker/hadolint
+      # on master, only publish version tagged with commit
       - docker/publish:
           filters:
-            tags:
-              only: /^\d+\.\d+\.\d+$/
             branches:
               only:
                 - master
@@ -48,7 +47,18 @@ workflows:
             - run-tests
             - docker/hadolint
           image: $CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME
-          update-description: true
+      # on tags, publish tagged image & update latest
+      - docker/publish:
+          filters:
+            tags:
+              only: /^\d+\.\d+\.\d+$/
+            branches:
+              ignore: /.*/
+          requires:
+            - run-tests
+            - docker/hadolint
+          image: $CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME
+          tag: latest,$CIRCLE_TAG
 
   nightly:
     triggers:
