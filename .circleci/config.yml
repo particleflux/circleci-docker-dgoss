@@ -35,8 +35,14 @@ workflows:
   version: 2
   commit:
     jobs:
-      - run-tests
-      - docker/hadolint
+      - run-tests:
+          filters:
+            tags:
+              only: /^\d+\.\d+\.\d+$/
+      - docker/hadolint:
+          filters:
+            tags:
+              only: /^\d+\.\d+\.\d+$/
       # on master, only publish version tagged with commit
       - docker/publish:
           filters:
