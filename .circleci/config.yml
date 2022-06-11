@@ -4,7 +4,7 @@
 ##
 version: 2.1
 orbs:
-  docker: circleci/docker@0.5.20
+  docker: circleci/docker@2.1.1
 jobs:
   run-tests:
     docker:
@@ -37,6 +37,19 @@ workflows:
     jobs:
       - run-tests
       - docker/hadolint
+      - docker/publish:
+          filters:
+            tags:
+              only: /^\d+\.\d+\.\d+$/
+            branches:
+              only:
+                - master
+          requires:
+            - run-tests
+            - docker/hadolint
+          image: $CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME
+          update-description: true
+
   nightly:
     triggers:
       - schedule:
