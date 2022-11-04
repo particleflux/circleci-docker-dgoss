@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [3.1.0] - 2022-11-04
+### Changed
+- Bump goss version to [0.3.20][goss-0.3.20]
+
 ## [3.0.0] - 2022-06-11
 ### Changed
 - Alpine version bump to 3.16.0
@@ -30,9 +34,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Initial version
 
-[Unreleased]: https://github.com/particleflux/circleci-docker-dgoss/compare/3.0.0...HEAD
+[Unreleased]: https://github.com/particleflux/circleci-docker-dgoss/compare/3.1.0...HEAD
+[3.1.0]: https://github.com/particleflux/circleci-docker-dgoss/compare/3.0.0...3.1.0
 [3.0.0]: https://github.com/particleflux/circleci-docker-dgoss/compare/2.0.0...3.0.0
 [2.0.0]: https://github.com/particleflux/circleci-docker-dgoss/compare/1.0.1...2.0.0
 [1.0.1]: https://github.com/particleflux/circleci-docker-dgoss/compare/1.0.0...1.0.1
 [1.0.0]: https://github.com/particleflux/circleci-docker-dgoss/releases/tag/1.0.0
+[goss-0.3.20]: https://github.com/aelsabbahy/goss/releases/tag/v0.3.20
 [goss-0.3.18]: https://github.com/aelsabbahy/goss/releases/tag/v0.3.18
