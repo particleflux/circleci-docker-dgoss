@@ -23,7 +23,7 @@ jobs:
             mkdir build
 
             echo "Building docker image..."
-            docker build -t "test-image" . | tee "build/docker-build.log"
+            docker build --progress=plain -t "test-image" . 2>&1 | tee "build/docker-build.log"
             
             cd tests
             
