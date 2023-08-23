@@ -24,9 +24,19 @@ jobs:
 
             echo "Building docker image..."
             docker build -t "test-image" . | tee "build/docker-build.log"
-
+            
             cd tests
+            
+            # Run tests twice, once with junit output, once with readable output
+            # The ones with junit are allowed to fail and not stop the build
+            echo -e "\nGenerating junit report..."
+            GOSS_OPTS='--format junit' dgoss run -Pit test-image bash > test-results.xml || /bin/true
+
+            echo -e "\nRunning tests..."
             dgoss run -Pit test-image bash
+
+      - store_test_results:
+          path: tests/test-results.xml
 
       - store_artifacts:
           path: build
