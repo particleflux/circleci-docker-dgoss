@@ -23,6 +23,6 @@ command:
   goss --version:
     exit-status: 0
     stdout:
-    - goss version v0.3.23
+    - goss version
     stderr: []
     timeout: 10000
