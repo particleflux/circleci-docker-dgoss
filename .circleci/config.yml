@@ -1,3 +1,4 @@
+---
 ##
 # Circle CI 2.0 configuration
 #
@@ -23,14 +24,16 @@ jobs:
             mkdir build
 
             echo "Building docker image..."
-            docker build --progress=plain -t "test-image" . 2>&1 | tee "build/docker-build.log"
-            
+            docker build --progress=plain -t "test-image" . 2>&1 |
+              tee "build/docker-build.log"
+
             cd tests
-            
+
             # Run tests twice, once with junit output, once with readable output
             # The ones with junit are allowed to fail and not stop the build
             echo -e "\nGenerating junit report..."
-            GOSS_OPTS='--format junit' dgoss run -Pit test-image bash > test-results.xml || /bin/true
+            GOSS_OPTS='--format junit' dgoss run -Pit test-image bash > \
+              test-results.xml || /bin/true
 
             echo -e "\nRunning tests..."
             dgoss run -Pit test-image bash
