@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Changed
+- Alpine version bump to 3.19.0
+- Bump jq to 1.7
+- Bump docker to 24.x
+- Bump goss to 0.4.4 - see [0.4 migration guide](https://github.com/goss-org/goss/blob/master/docs/v4_migration.md)
 
 ## [4.0.0] - 2023-06-07
 ### Changed
