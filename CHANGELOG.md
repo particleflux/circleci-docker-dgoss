@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 - Alpine version bump to 3.21.0
 - Bump docker to 27.x
-- Bump goss to [0.4.7](https://github.com/aelsabbahy/goss/releases/tag/v0.4.7)
+- Bump goss to [0.4.9](https://github.com/aelsabbahy/goss/releases/tag/v0.4.9)
 
 ## [5.0.0] - 2023-12-23
 ### Changed
