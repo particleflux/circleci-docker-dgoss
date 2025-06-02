@@ -9,5 +9,5 @@ RUN apk --no-cache add \
     # CircleCI required tools
     git=~2 openssh-client-default=~9 tar=~1 gzip=~1 \
     # required build tools
-    bash=~5 curl=~8 docker=~27 jq=~1.7 \
+    bash=~5 curl=~8 docker=~28 jq=~1.7 \
     && curl -fsSL https://goss.rocks/install | sh

@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Changed
 - Alpine version bump to 3.22.0
+- Bump docker to 28.x
 
 ## [6.0.0] - 2024-12-09
 ### Changed
