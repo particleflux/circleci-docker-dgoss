@@ -53,8 +53,6 @@ workflows:
             tags:
               only: /^\d+\.\d+\.\d+$/
       - docker/hadolint:
-          # workaround for https://github.com/CircleCI-Public/docker-orb/issues/209
-          hadolint-tag: 2.12.0-debian
           filters:
             tags:
               only: /^\d+\.\d+\.\d+$/
@@ -91,6 +89,4 @@ workflows:
                 - master
     jobs:
       - run-tests
-      - docker/hadolint:
-          # workaround for https://github.com/CircleCI-Public/docker-orb/issues/209
-          hadolint-tag: 2.12.0-debian
+      - docker/hadolint
