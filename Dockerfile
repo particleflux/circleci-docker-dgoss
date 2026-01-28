@@ -1,4 +1,4 @@
-FROM alpine:3.23.2
+FROM alpine:3.23.3
 
 # renovate: datasource=github-releases depName=goss-org/goss versioning=semver
 ENV GOSS_VER=v0.4.9
