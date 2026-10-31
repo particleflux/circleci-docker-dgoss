@@ -6,8 +6,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [9.0.0] - 2026-10-31
 ### Changed
 - Bump goss to [0.4.10](https://github.com/aelsabbahy/goss/releases/tag/v0.4.10)
+
+### Fixed
+- Bump alpine to 3.24.3
+- Bump docker to 4.0.1
 
 ## [8.0.0] - 2026-01-14
 ### Changed
@@ -70,7 +76,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Initial version
 
-[Unreleased]: https://github.com/particleflux/circleci-docker-dgoss/compare/8.0.0...HEAD
+[Unreleased]: https://github.com/particleflux/circleci-docker-dgoss/compare/9.0.0...HEAD
+[9.0.0]: https://github.com/particleflux/circleci-docker-dgoss/compare/8.0.0...9.0.0
 [8.0.0]: https://github.com/particleflux/circleci-docker-dgoss/compare/7.0.0...8.0.0
 [7.0.0]: https://github.com/particleflux/circleci-docker-dgoss/compare/6.0.0...7.0.0
 [6.0.0]: https://github.com/particleflux/circleci-docker-dgoss/compare/5.0.0...6.0.0
